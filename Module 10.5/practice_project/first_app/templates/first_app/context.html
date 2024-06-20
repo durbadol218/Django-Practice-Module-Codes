@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align:center;"><a href="/">Home Page</a></h1>
+    <h1 style="color:black;text-align:center">This page is for <span style="color:red;">Context Practice</span></h1>
+
+    <div style="text-align:center;">
+        <h3>Player's Name : {{name}}</h3>
+        <h3>Player's Nationality : {{nationality}}</h3>
+        <h3>Player's Position : {{position}}</h3>
+        <h3>Clubs : {{clubs}}</h3>
+    </div>
+
+    <div style="text-align:center;" class="template-filtering">
+        <h2>Template Filtering</h2>
+
+        <h3 style="color:#D10363">1. Add!</h3>
+        {% for i in number_list %}
+            <h3>{{i | add:"5"}}</h3>
+        {% endfor %}
+
+        <h3 style="color:#D10363">2. Addslashes!</h3>
+        <h5>{{ single_name | addslashes}}</h5>
+
+        <h3 style="color:#D10363">3. Center!</h3>
+        <h5>{{ single_name | center:"15"}}</h5>
+
+        <h3 style="color:#D10363">3. Cut!</h3>
+        <h4>{{ single_name | cut:" "}}</h4>
+
+        <h3 style="color:#D10363">4. Date!</h3>
+        <h4>{{ birthday | date:"D d M Y"}}</h4>
+
+        <h3 style="color:#D10363">5. Dictsort!</h3>
+        <h4>{{ members | dictsort:"name"}}</h4>
+
+        <h3 style="color:#D10363">6. First!</h3>
+        <h4>{{ name_list | first}}</h4>
+
+        <h3 style="color:#D10363">7. Last!</h3>
+        <h4>{{ name_list | last}}</h4>
+        
+        <h3 style="color:#D10363">8. Length!</h3>
+        <h4>{{ members | length}}</h4>
+        
+        <h3 style="color:#D10363">9. Lower!</h3>
+        <h4>{{ single_name | lower}}</h4>
+        
+        <h3 style="color:#D10363">10. Slugify</h3>
+        <h4>{{ name_list | slugify}}</h4>
+        
+        <h3 style="color:#D10363">11. Slice</h3>
+        <h4>{{ number_list | slice:"0:2"}}</h4>
+
+        <h3 style="color:#D10363">12. Time</h3>
+        <h4>{{ time | time:"H:i"}}</h4>
+
+        <h3 style="color:#D10363">13. Timesince</h3>
+        <h4>{{ publish_date | timesince}}</h4>
+
+        <h3 style="color:#D10363">14. Title</h3>
+        <h4>{{ name_list | title}}</h4>
+
+        <h3 style="color:#D10363">15. Join</h3>
+        <h4>"{{ name_list | join:" - "}}"</h4>
+
+        <h3 style="color:#D10363">16. Date Format Again</h3>
+        <h4>{{birthday |date:"SHORT_DATE_FORMAT" }}</h4>
+
+        <h3 style="color:#D10363">17. Date Format Again</h3>
+        <h4>{{birthday |date}}</h4>
+
+        <h3 style="color:#D10363">18. Default</h3>
+        <h4>{{ default_value|default_if_none:"nothing" }}</h4>
+
+        <h3 style="color:#D10363">19. Cut Filter</h3>
+        <h4>{{ string | cut:" "}}</h4>
+
+        {% comment %} <h3 style="color:#D10363">20. Escape Filter</h3>
+        <h4><p>This <em>should be</em> fun!</p> | escape</h4> {% endcomment %}
+
+        <h3 style="color:#D10363">21. Random Filter</h3>
+        <h4>{{ name_list | random}}</h4>
+
+        <h3 style="color:#D10363">22. Truncatechars Filter</h3>
+        <h4>{{ string | truncatechars:"2"}}</h4>
+
+        <h3 style="color:#D10363">23. Truncatewords Filter</h3>
+        <h4>{{ string | truncatewords:"1"}}</h4>
+    </div>
+</body>
+</html>
