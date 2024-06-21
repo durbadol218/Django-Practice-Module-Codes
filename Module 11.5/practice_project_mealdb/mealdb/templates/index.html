@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% load static %} 
+{% block content %} 
+
+<div class="container my-5">
+    <h1 class="text-center text-warning border rounded-3">Meal List</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-3 py-5">
+        {% for i in meal %}
+        <div class="col">
+            <div class="card" style="width: 18rem">
+                <img src="{{i.strMealThumb}}" class="card-img-top" alt="..." />
+                <div class="card-body">
+                    <h5 class="card-title text-danger">{{i.strMeal}}</h5>
+                    <p class="card-text text-black">
+                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %} 
+
+{% comment %} <h1>I'm inside first_app.</h1>
+{% endblock %} {% endcomment %}
