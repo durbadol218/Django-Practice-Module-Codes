@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock title %}
+{% block content %}
+<div class="mt-3">
+    <h1 class="text-success text-center">Album List</h1>
+    <div class="table-responsive border border-info p-3 rounded">
+    <table class="table table-success table-hover align-middle">
+        <thead>
+            <tr >
+                <th class="text-info">ID</th>
+                <th class="text-info">Musician Name</th>
+                <th class="text-info">Email</th>
+                <th class="text-info">Album Name</th>
+                <th class="text-info">Album Rating</th>
+                <th class="text-info">Instrument Type</th>
+                <th class="text-info">Release Date</th>
+                <th class="text-info">Actions</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            {% for album in album_data %}
+            <tr>
+                <th scope="row">{{album.id}}</th>
+                <td>
+                    <a href="#" class="text-info fst-italic text-decoration-none">
+                        {{album.musicians.first_name}}
+                    </a>
+                </td>
+                <td>{{album.musicians.email}}</td>
+                <td>{{album.album_name}}</td>
+                <td>{{album.rating}}</td>
+                <td>{{album.musicians.instrument_type}}</td>
+                <td>{{album.release_date}}</td>
+                <td>
+                    <a class="btn btn-outline-warning" href="{% url 'update_album' album.id %}">Update</a>
+                    <a class="btn btn-outline-danger" href="{% url 'delete_album' album.id %}">Delete</a>
+                </td>
+              </tr>
+
+            {% endfor %}
+          
+        </tbody>
+      </table>
+</div>
+</div>
+{% endblock content %}
